@@ -1,0 +1,44 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Jersey+15&family=Share+Tech+Mono&family=Varela+Round&display=swap');
+.jersey-15-regular {
+  font-family: "Jersey 15", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*html body and all*/
+*{
+    margin:0;
+}
+
+html {
+    background-color: black;
+}
+
+/* header styling */
+header{
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 5vmax;
+    margin-bottom: 3vmax;
+    width: 100%;
+    text-align: center;
+}
+
+header h1{
+    font-size: 400%;
+    color: white;
+}
+
+header p{
+    display: inline-block;
+    margin-top: 1vh;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+header p:hover{
+    transform: scale(1.2);
+}
+
