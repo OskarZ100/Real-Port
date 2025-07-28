@@ -31,6 +31,18 @@
     }
 }
 
+@keyframes sky-idle {
+    0%{
+        background-color: rgb(41, 194, 255);
+    }
+    50%{
+        background-color: rgb(1, 131, 183);
+    }
+    100%{
+        background-color: rgb(41, 194, 255);
+    }
+}
+
 
 /*html body and all*/
 *{
@@ -90,6 +102,7 @@ header p:hover{
 /* bottom of page */
 #bottom-page{
     margin-top: 15vh;
+    text-align: center;
 }
 
 /* buttons styling */
@@ -120,6 +133,19 @@ header p:hover{
 }
 
 /* graphics and such :( */
+#graphic-holder{
+    margin-top: 5vh;
+    display: inline-block;
+    border: 2px solid white;
+    width: 50vw;
+    height: 50vh;
+    
+    background-color: rgb(41, 194, 255);
+    animation: sky-idle 5s ease-in-out infinite;
+}
 
+.rainy-day-background{
+    background-color: rgb(35, 35, 35);
+}
 
 
