@@ -20,44 +20,7 @@ const theBox = document.getElementById("graphic-holder");
 //some vars i need to use 
 let currentContent = [title,content,lilimage];
 
-//hover over buttons event listener :o
 
-//hover event for the project button
-buttonProjects.addEventListener("mouseover", (event) => { 
-
-});
-
-buttonProjects.addEventListener("mouseout", (event) => {
-   
-});
-
-//hover event for the about me button
-buttonAboutme.addEventListener("mouseover", (event) => { 
-   
-});
-
-buttonAboutme.addEventListener("mouseout", (event) => {
-
-});
-
-//hover effect for the contact button
-buttonContact.addEventListener("mouseover", (event) => { 
- 
-
-});
-
-buttonContact.addEventListener("mouseout", (event) => {
-
-});
-
-//hover effect for the links button
-buttonLinks.addEventListener("mouseover", (event) => { 
-
-});
-
-buttonLinks.addEventListener("mouseout", (event) => {
-    
-});
 
 //on click event listeners 
 buttonProjects.addEventListener("click", (event) =>{
@@ -108,6 +71,12 @@ function projectItems(){
     let projectHolder = document.createElement('div');
     projectHolder.id = "project-holder";
 
+    let projectTest = document.createElement('div');
+    projectHolder.appendChild(createProject("Terminal Website","url(https://upload.wikimedia.org/wikipedia/commons/d/d8/Colossal_Cave_Adventure_on_VT100_terminal.jpg","https://github.com/OskarZ100/ConsoleWebsite"));
+    projectHolder.appendChild(createProject("CLI-contact manager","url(https://live.staticflickr.com/5605/15433651319_745df6633a_c.jpg)","https://github.com/OskarZ100/CLI-ContactManager"));
+    projectHolder.appendChild(createProject("To Do List (java gui)","url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCxVPz8FX5h_wzdpq1UEgDgbhPikaHFib8zg&s)","https://github.com/OskarZ100/ToDoGUI"));
+    projectHolder.appendChild(createProject("This Portfolio","url(toughPic.jpg)","https://github.com/OskarZ100/Real-Port"));
+    
     
 
     currentContent = [title ,desc,projectHolder];
@@ -132,6 +101,8 @@ function abtItems(){
     let exp = document.createElement('p');
     exp.textContent = "Html,Css,Javascript,Java,Python,C#,C++";
     exp.id = "exp-desc";
+
+
 
     currentContent = [title,desc,experience,exp];
     for(let i = 0; i < currentContent.length; i++){
@@ -161,6 +132,9 @@ function cntItems(){
     buttonResume.id = "resume-button";
     buttonResume.addEventListener("click", (event) =>{
         console.log("resume download");
+        const fileToDownload = 'resume.pdf'; // Replace with the actual file URL
+        const desiredFileName = 'resume.pdf'; // Desired name for the downloaded file
+        downloadFile(fileToDownload, desiredFileName);
     });
 
 
@@ -228,19 +202,24 @@ function lnkItems(){
     buttonResume.id = "resume-button";
     buttonResume.addEventListener("click", (event) =>{
         console.log("resume download");
+        const fileToDownload = 'resume.pdf'; // Replace with the actual file URL
+        const desiredFileName = 'resume.pdf'; // Desired name for the downloaded file
+        downloadFile(fileToDownload, desiredFileName);
     });
 
     git.addEventListener("click", (event) =>{
-        console.log("GITHUB");
+        window.location.href = "https://github.com/OskarZ100";
     });
 
     handshake.addEventListener("click", (event) =>{
-        console.log("HANDHSOAKE");
+        window.location.href = "https://csuohio.joinhandshake.com/profiles/r64v5u";
     });
 
     linkd.addEventListener("click", (event) =>{
-        console.log("LINKEDNIEND");
+        window.location.href = "https://www.linkedin.com/in/oskaras-zincenko-9a9139350";
     });
+
+    
 
 
 
@@ -250,6 +229,32 @@ function lnkItems(){
     }
 }
 
-function createProject(name,img){
+function createProject(name,img,link){
     //take name and set to name that displays over the image as the background
+    let fullDiv = document.createElement('div');
+    let nameTitle = document.createElement('h3');
+    nameTitle.textContent = name;
+    nameTitle.classList.add("project-name-title");
+
+    fullDiv.appendChild(nameTitle);
+
+    fullDiv.style.backgroundImage = img;
+
+    fullDiv.classList.add("project-class")
+    fullDiv.addEventListener("click", (event) => {
+        window.location.href = link;
+    });
+    return fullDiv;
+
+}
+
+function downloadFile(fileUrl, fileName) {
+        let element = document.createElement('a');
+        element.setAttribute('href',
+                'data:text/plain;charset=utf-8, '
+                + encodeURIComponent(fileName));
+        element.setAttribute('download', fileUrl);
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
 }
