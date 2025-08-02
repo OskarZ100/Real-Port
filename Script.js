@@ -198,7 +198,7 @@ function lnkItems(){
 
 
     let buttonResume = document.createElement('div');
-    buttonResume.textContent = "ANOTHER RESUME";
+    buttonResume.textContent = "RESUME 2";
     buttonResume.id = "resume-button";
     buttonResume.addEventListener("click", (event) =>{
         console.log("resume download");

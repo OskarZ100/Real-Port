@@ -416,7 +416,7 @@ header p:hover{
     font-family: "Jersey 15", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 3vh;
+    font-size: 1.5vw;
 }
 
 #exp-desc{
@@ -488,9 +488,8 @@ header p:hover{
     animation-iteration-count: 1;
     color: white;
     font-family: "Jersey 15", sans-serif;
-    font-weight: 400;
+    overflow: auto;
     font-style: normal;
-    font-size: 3vh;
     text-align: center;
     background-color: rgba(45, 45, 45, 0.503);
     border: 2px solid white;
@@ -591,13 +590,14 @@ header p:hover{
 }
 
 
+
 .project-name-title{
     display: inline-block;
     color: black;
     font-family: "Jersey 15", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 210%;
+    font-size: 2vw;
     background-color: rgba(183, 183, 183, 0.556);
 }
 
@@ -605,3 +605,84 @@ header p:hover{
 
 }
 
+@media (max-width: 850px) {
+    #abt-desc{
+        font-size: 1.5vh;
+    }
+
+    #abt-title{
+        font-size: 3vh;
+    }
+
+    .contact-stuff{
+        font-size: 1.5vh;
+    }
+
+    #exp-desc{
+        right: 40%;
+        font-size: 1.5vh;
+    }
+
+    #expp-desc{
+        font-size: 1.5vh;
+    }
+
+    #cnt-title{
+        font-size: 3vh;
+    }
+
+    #lnk-title{
+        font-size: 3vh;
+    }
+
+    #resume-button{
+        width: 4vw;
+        height: 2vh;
+    }
+}
+
+
+@media (max-width:1400px){
+
+    #content-container{
+        
+    }
+
+    #resume-button{
+        width: 7vw;
+    }
+}
+
+@media (max-width:980px){
+    .social-titles{
+        font-size: 1.2vh;
+    }
+
+    .social-links img{
+        height: 10vw;
+    }
+
+    .social-links{
+        height: 10vh;
+    }
+
+    #title-div{
+        font-size: 3.2vh;
+    }
+
+    #content-container p{
+        font-size: 2.2vh;
+    }
+}
+
+@media (max-width:850px){
+    #content-container p{
+        font-size: 1.2vh;
+    }
+}
+
+@media (max-width:500px){
+    .social-titles{
+        font-size: 0.9vh;
+    }
+}
